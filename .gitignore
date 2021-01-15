@@ -1,5 +1,7 @@
 #RiderC#
 .idea/
 *.*.iml
+#Visual Studio
 .vs/
+#Visual Studio Code
 .vscode/
