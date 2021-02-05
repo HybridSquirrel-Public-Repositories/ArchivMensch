@@ -1,0 +1,15 @@
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\bin\Debug\ArchivMensch.exe.config
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\bin\Debug\ArchivMensch.exe
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\bin\Debug\ArchivMensch.pdb
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\bin\Debug\Dapper.dll
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\bin\Debug\System.Data.SQLite.dll
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\bin\Debug\Dapper.xml
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\bin\Debug\System.Data.SQLite.xml
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\obj\Debug\ArchivMensch.csprojAssemblyReference.cache
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\obj\Debug\ArchivMensch.Form1.resources
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\obj\Debug\ArchivMensch.Properties.Resources.resources
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\obj\Debug\ArchivMensch.csproj.GenerateResource.cache
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\obj\Debug\ArchivMensch.csproj.CoreCompileInputs.cache
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\obj\Debug\ArchivMensch.csproj.CopyComplete
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\obj\Debug\ArchivMensch.exe
+C:\Users\lukas\source\repos\ArchivMensch\ArchivMensch\ArchivMensch\obj\Debug\ArchivMensch.pdb
