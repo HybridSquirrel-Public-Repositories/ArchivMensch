@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//Backend only get files from SQLite
+//Backend connect SQL and pass them to forms
 namespace ArchivMensch
 {
     class Backend
