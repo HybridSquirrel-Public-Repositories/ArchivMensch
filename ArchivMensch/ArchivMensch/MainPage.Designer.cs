@@ -1,7 +1,7 @@
 ﻿
 namespace ArchivMensch
 {
-    partial class Form1
+    partial class MainPage
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,7 @@ namespace ArchivMensch
             this.Delete = new System.Windows.Forms.Button();
             this.Change = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Something = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,13 +70,20 @@ namespace ArchivMensch
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Something});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(634, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(428, 239);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Form1
+            // Something
+            // 
+            this.Something.HeaderText = "Something";
+            this.Something.Name = "Something";
+            // 
+            // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,8 +92,8 @@ namespace ArchivMensch
             this.Controls.Add(this.Change);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Add);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainPage";
+            this.Text = "MainPage";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -97,6 +105,7 @@ namespace ArchivMensch
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Change;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Something;
     }
 }
 
