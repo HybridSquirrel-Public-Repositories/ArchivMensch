@@ -3,5 +3,8 @@
 *.*.iml
 #Visual Studio
 .vs/
+
+ArchivMensch/ArchivMensch/obj/Debug
+
 #Visual Studio Code
 .vscode/
