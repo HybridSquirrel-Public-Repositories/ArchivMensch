@@ -33,7 +33,6 @@ namespace ArchivMensch
             this.Delete = new System.Windows.Forms.Button();
             this.Change = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Something = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +48,7 @@ namespace ArchivMensch
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(652, 97);
+            this.Delete.Location = new System.Drawing.Point(652, 71);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(136, 53);
             this.Delete.TabIndex = 1;
@@ -59,7 +58,7 @@ namespace ArchivMensch
             // 
             // Change
             // 
-            this.Change.Location = new System.Drawing.Point(652, 183);
+            this.Change.Location = new System.Drawing.Point(652, 130);
             this.Change.Name = "Change";
             this.Change.Size = new System.Drawing.Size(136, 53);
             this.Change.TabIndex = 2;
@@ -70,18 +69,11 @@ namespace ArchivMensch
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Something});
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(428, 239);
+            this.dataGridView1.Size = new System.Drawing.Size(634, 426);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Something
-            // 
-            this.Something.HeaderText = "Something";
-            this.Something.Name = "Something";
             // 
             // MainPage
             // 
@@ -105,7 +97,6 @@ namespace ArchivMensch
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Change;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Something;
     }
 }
 
