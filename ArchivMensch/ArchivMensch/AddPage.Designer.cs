@@ -1,4 +1,5 @@
-﻿namespace ArchivMensch
+﻿
+namespace ArchivMensch
 {
     partial class AddPage
     {
@@ -28,159 +29,229 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AddButton = new System.Windows.Forms.Button();
             this.FirstName = new System.Windows.Forms.Label();
+            this.FirstNameBox = new System.Windows.Forms.TextBox();
             this.LastName = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.LastNameBox = new System.Windows.Forms.TextBox();
+            this.PhoneNumber = new System.Windows.Forms.Label();
+            this.PhoneNumberBox = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.Label();
+            this.SocialSecurityNumber = new System.Windows.Forms.Label();
+            this.SocialSecurityNumberBox = new System.Windows.Forms.TextBox();
+            this.Class = new System.Windows.Forms.Label();
+            this.ClassBox = new System.Windows.Forms.TextBox();
             this.Course = new System.Windows.Forms.Label();
             this.Address = new System.Windows.Forms.Label();
-            this.Epost = new System.Windows.Forms.Label();
-            this.Add = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.ChangeThingy = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ClearButton = new System.Windows.Forms.Button();
+            this.CourseBox = new System.Windows.Forms.TextBox();
+            this.AddressBox = new System.Windows.Forms.TextBox();
+            this.EmailBox = new System.Windows.Forms.TextBox();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // AddButton
             // 
-            this.textBox1.Location = new System.Drawing.Point(35, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 0;
+            this.AddButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddButton.Location = new System.Drawing.Point(593, 321);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(195, 117);
+            this.AddButton.TabIndex = 0;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // FirstName
             // 
             this.FirstName.AutoSize = true;
-            this.FirstName.Location = new System.Drawing.Point(32, 45);
+            this.FirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstName.Location = new System.Drawing.Point(13, 13);
             this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(54, 13);
+            this.FirstName.Size = new System.Drawing.Size(76, 17);
             this.FirstName.TabIndex = 1;
-            this.FirstName.Text = "FirstName";
-            this.FirstName.Click += new System.EventHandler(this.label1_Click);
+            this.FirstName.Text = "First Name";
+            // 
+            // FirstNameBox
+            // 
+            this.FirstNameBox.Location = new System.Drawing.Point(16, 33);
+            this.FirstNameBox.Name = "FirstNameBox";
+            this.FirstNameBox.Size = new System.Drawing.Size(125, 20);
+            this.FirstNameBox.TabIndex = 2;
+            this.FirstNameBox.TextChanged += new System.EventHandler(this.FirstNameBox_TextChanged);
             // 
             // LastName
             // 
             this.LastName.AutoSize = true;
-            this.LastName.Location = new System.Drawing.Point(32, 94);
+            this.LastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastName.Location = new System.Drawing.Point(177, 13);
             this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(55, 13);
-            this.LastName.TabIndex = 2;
-            this.LastName.Text = "LastName";
-            this.LastName.Click += new System.EventHandler(this.LastName_Click);
+            this.LastName.Size = new System.Drawing.Size(76, 17);
+            this.LastName.TabIndex = 3;
+            this.LastName.Text = "Last Name";
             // 
-            // textBox2
+            // LastNameBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(35, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 3;
+            this.LastNameBox.Location = new System.Drawing.Point(180, 33);
+            this.LastNameBox.Name = "LastNameBox";
+            this.LastNameBox.Size = new System.Drawing.Size(125, 20);
+            this.LastNameBox.TabIndex = 4;
+            this.LastNameBox.TextChanged += new System.EventHandler(this.LastNameBox_TextChanged);
             // 
-            // textBox3
+            // PhoneNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(35, 154);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 20);
-            this.textBox3.TabIndex = 4;
+            this.PhoneNumber.AutoSize = true;
+            this.PhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneNumber.Location = new System.Drawing.Point(13, 60);
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.Size = new System.Drawing.Size(103, 17);
+            this.PhoneNumber.TabIndex = 5;
+            this.PhoneNumber.Text = "Phone Number";
             // 
-            // textBox4
+            // PhoneNumberBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(35, 193);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(146, 20);
-            this.textBox4.TabIndex = 5;
+            this.PhoneNumberBox.Location = new System.Drawing.Point(16, 80);
+            this.PhoneNumberBox.Name = "PhoneNumberBox";
+            this.PhoneNumberBox.Size = new System.Drawing.Size(125, 20);
+            this.PhoneNumberBox.TabIndex = 6;
+            this.PhoneNumberBox.TextChanged += new System.EventHandler(this.PhoneNumberBox_TextChanged);
             // 
-            // textBox5
+            // Email
             // 
-            this.textBox5.Location = new System.Drawing.Point(35, 232);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(146, 20);
-            this.textBox5.TabIndex = 6;
+            this.Email.AutoSize = true;
+            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.Location = new System.Drawing.Point(13, 107);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(42, 17);
+            this.Email.TabIndex = 7;
+            this.Email.Text = "Email";
+            // 
+            // SocialSecurityNumber
+            // 
+            this.SocialSecurityNumber.AutoSize = true;
+            this.SocialSecurityNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SocialSecurityNumber.Location = new System.Drawing.Point(177, 60);
+            this.SocialSecurityNumber.Name = "SocialSecurityNumber";
+            this.SocialSecurityNumber.Size = new System.Drawing.Size(155, 17);
+            this.SocialSecurityNumber.TabIndex = 9;
+            this.SocialSecurityNumber.Text = "Social Security Number";
+            // 
+            // SocialSecurityNumberBox
+            // 
+            this.SocialSecurityNumberBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SocialSecurityNumberBox.Location = new System.Drawing.Point(180, 81);
+            this.SocialSecurityNumberBox.Name = "SocialSecurityNumberBox";
+            this.SocialSecurityNumberBox.Size = new System.Drawing.Size(125, 20);
+            this.SocialSecurityNumberBox.TabIndex = 10;
+            this.SocialSecurityNumberBox.TextChanged += new System.EventHandler(this.SocialSecurityNumberBox_TextChanged);
+            // 
+            // Class
+            // 
+            this.Class.AutoSize = true;
+            this.Class.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Class.Location = new System.Drawing.Point(13, 151);
+            this.Class.Name = "Class";
+            this.Class.Size = new System.Drawing.Size(42, 17);
+            this.Class.TabIndex = 11;
+            this.Class.Text = "Class";
+            // 
+            // ClassBox
+            // 
+            this.ClassBox.Location = new System.Drawing.Point(16, 172);
+            this.ClassBox.Name = "ClassBox";
+            this.ClassBox.Size = new System.Drawing.Size(125, 20);
+            this.ClassBox.TabIndex = 12;
+            this.ClassBox.TextChanged += new System.EventHandler(this.ClassBox_TextChanged);
             // 
             // Course
             // 
             this.Course.AutoSize = true;
-            this.Course.Location = new System.Drawing.Point(32, 138);
+            this.Course.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Course.Location = new System.Drawing.Point(177, 151);
             this.Course.Name = "Course";
-            this.Course.Size = new System.Drawing.Size(40, 13);
-            this.Course.TabIndex = 7;
+            this.Course.Size = new System.Drawing.Size(53, 17);
+            this.Course.TabIndex = 13;
             this.Course.Text = "Course";
             // 
             // Address
             // 
             this.Address.AutoSize = true;
-            this.Address.Location = new System.Drawing.Point(32, 177);
+            this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Address.Location = new System.Drawing.Point(177, 107);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(45, 13);
-            this.Address.TabIndex = 8;
+            this.Address.Size = new System.Drawing.Size(60, 17);
+            this.Address.TabIndex = 15;
             this.Address.Text = "Address";
-            this.Address.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Epost
+            // ClearButton
             // 
-            this.Epost.AutoSize = true;
-            this.Epost.Location = new System.Drawing.Point(32, 216);
-            this.Epost.Name = "Epost";
-            this.Epost.Size = new System.Drawing.Size(34, 13);
-            this.Epost.TabIndex = 9;
-            this.Epost.Text = "Epost";
+            this.ClearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearButton.Location = new System.Drawing.Point(593, 206);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(195, 109);
+            this.ClearButton.TabIndex = 17;
+            this.ClearButton.Text = "Clear";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
-            // Add
+            // CourseBox
             // 
-            this.Add.Location = new System.Drawing.Point(613, 341);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(175, 97);
-            this.Add.TabIndex = 10;
-            this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
+            this.CourseBox.Location = new System.Drawing.Point(180, 171);
+            this.CourseBox.Name = "CourseBox";
+            this.CourseBox.Size = new System.Drawing.Size(125, 20);
+            this.CourseBox.TabIndex = 19;
+            this.CourseBox.TextChanged += new System.EventHandler(this.CourseBox_TextChanged);
             // 
-            // comboBox1
+            // AddressBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(367, 45);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 11;
+            this.AddressBox.Location = new System.Drawing.Point(180, 127);
+            this.AddressBox.Name = "AddressBox";
+            this.AddressBox.Size = new System.Drawing.Size(125, 20);
+            this.AddressBox.TabIndex = 20;
+            this.AddressBox.TextChanged += new System.EventHandler(this.AddressBox_TextChanged);
             // 
-            // ChangeThingy
+            // EmailBox
             // 
-            this.ChangeThingy.AutoSize = true;
-            this.ChangeThingy.Location = new System.Drawing.Point(367, 26);
-            this.ChangeThingy.Name = "ChangeThingy";
-            this.ChangeThingy.Size = new System.Drawing.Size(76, 13);
-            this.ChangeThingy.TabIndex = 12;
-            this.ChangeThingy.Text = "ChangeThingy";
+            this.EmailBox.Location = new System.Drawing.Point(16, 127);
+            this.EmailBox.Name = "EmailBox";
+            this.EmailBox.Size = new System.Drawing.Size(125, 20);
+            this.EmailBox.TabIndex = 21;
+            this.EmailBox.TextChanged += new System.EventHandler(this.EmailBox_TextChanged);
             // 
-            // label1
+            // CloseButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 259);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "Class";
+            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.Location = new System.Drawing.Point(593, 91);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(195, 109);
+            this.CloseButton.TabIndex = 22;
+            this.CloseButton.Text = "Close";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // AddPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.ChangeThingy);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.Add);
-            this.Controls.Add(this.Epost);
+            this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this.EmailBox);
+            this.Controls.Add(this.AddressBox);
+            this.Controls.Add(this.CourseBox);
+            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.Address);
             this.Controls.Add(this.Course);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.ClassBox);
+            this.Controls.Add(this.Class);
+            this.Controls.Add(this.SocialSecurityNumberBox);
+            this.Controls.Add(this.SocialSecurityNumber);
+            this.Controls.Add(this.Email);
+            this.Controls.Add(this.PhoneNumberBox);
+            this.Controls.Add(this.PhoneNumber);
+            this.Controls.Add(this.LastNameBox);
             this.Controls.Add(this.LastName);
+            this.Controls.Add(this.FirstNameBox);
             this.Controls.Add(this.FirstName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AddButton);
             this.Name = "AddPage";
             this.Text = "AddPage";
             this.ResumeLayout(false);
@@ -190,19 +261,24 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Label FirstName;
+        private System.Windows.Forms.TextBox FirstNameBox;
         private System.Windows.Forms.Label LastName;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox LastNameBox;
+        private System.Windows.Forms.Label PhoneNumber;
+        private System.Windows.Forms.TextBox PhoneNumberBox;
+        private System.Windows.Forms.Label Email;
+        private System.Windows.Forms.Label SocialSecurityNumber;
+        private System.Windows.Forms.TextBox SocialSecurityNumberBox;
+        private System.Windows.Forms.Label Class;
+        private System.Windows.Forms.TextBox ClassBox;
         private System.Windows.Forms.Label Course;
         private System.Windows.Forms.Label Address;
-        private System.Windows.Forms.Label Epost;
-        private System.Windows.Forms.Button Add;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label ChangeThingy;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button ClearButton;
+        private System.Windows.Forms.TextBox CourseBox;
+        private System.Windows.Forms.TextBox AddressBox;
+        private System.Windows.Forms.TextBox EmailBox;
+        private System.Windows.Forms.Button CloseButton;
     }
 }

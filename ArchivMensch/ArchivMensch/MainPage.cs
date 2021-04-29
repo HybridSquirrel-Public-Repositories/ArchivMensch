@@ -11,35 +11,73 @@ namespace ArchivMensch
         public MainPage()
         {
             InitializeComponent();
-            backendDatabase.LoadData(dataGridView1);
+            
+        }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+
+            ViewModeBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ViewModeBox.Text = "Student";
+            backendDatabase.LoadData(DataGrid, ViewModeBox.Text);
+
+        }
+
+        private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
 
-
-        private void Add_Click(object sender, EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
+
             AddPage addPage = new AddPage();
             addPage.Show();
+            addPage.SetSettings(ViewModeBox.Text, DataGrid);
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ChangeButton_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            string value = "";
+            if (ViewModeBox.Text == "Class")
+            {
+                value = DataGrid.CurrentRow.Cells["ClassName"].Value.ToString();
+
+            }
+            else if (ViewModeBox.Text == "Course")
+            {
+                value = DataGrid.CurrentRow.Cells["CourseID"].Value.ToString();
+
+            }
+            else
+            {
+                value = DataGrid.CurrentRow.Cells["SocialSecurityNumber"].Value.ToString();
+            }
             
+            backendDatabase.DeleteData(ViewModeBox.Text, value);
+            backendDatabase.LoadData(DataGrid, ViewModeBox.Text);
         }
 
-        private void Change_Click(object sender, EventArgs e)
+        private void ExitButton_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
-        private void Delete_Click(object sender, EventArgs e)
+        private void DirectQueryButton_Click(object sender, EventArgs e)
         {
-
+            DirectQuery directQuery = new DirectQuery();
+            directQuery.Show();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ViewModeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            backendDatabase.LoadData(DataGrid, ViewModeBox.Text);
         }
     }
 

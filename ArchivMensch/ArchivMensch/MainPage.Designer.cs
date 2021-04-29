@@ -29,74 +29,133 @@ namespace ArchivMensch
         /// </summary>
         private void InitializeComponent()
         {
-            this.Add = new System.Windows.Forms.Button();
-            this.Delete = new System.Windows.Forms.Button();
-            this.Change = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.DataGrid = new System.Windows.Forms.DataGridView();
+            this.DirectQueryButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.ChangeButton = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.ViewModeBox = new System.Windows.Forms.ComboBox();
+            this.ViewOptions = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // Add
+            // DataGrid
             // 
-            this.Add.Location = new System.Drawing.Point(652, 12);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(136, 53);
-            this.Add.TabIndex = 0;
-            this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
+            this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGrid.Location = new System.Drawing.Point(13, 13);
+            this.DataGrid.Name = "DataGrid";
+            this.DataGrid.Size = new System.Drawing.Size(633, 425);
+            this.DataGrid.TabIndex = 3;
+            this.DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellContentClick);
             // 
-            // Delete
+            // DirectQueryButton
             // 
-            this.Delete.Location = new System.Drawing.Point(652, 71);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(136, 53);
-            this.Delete.TabIndex = 1;
-            this.Delete.Text = "Delete";
-            this.Delete.UseVisualStyleBackColor = true;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            this.DirectQueryButton.Location = new System.Drawing.Point(652, 385);
+            this.DirectQueryButton.Name = "DirectQueryButton";
+            this.DirectQueryButton.Size = new System.Drawing.Size(136, 53);
+            this.DirectQueryButton.TabIndex = 4;
+            this.DirectQueryButton.Text = "Direct Query";
+            this.DirectQueryButton.UseVisualStyleBackColor = true;
+            this.DirectQueryButton.Click += new System.EventHandler(this.DirectQueryButton_Click);
             // 
-            // Change
+            // AddButton
             // 
-            this.Change.Location = new System.Drawing.Point(652, 130);
-            this.Change.Name = "Change";
-            this.Change.Size = new System.Drawing.Size(136, 53);
-            this.Change.TabIndex = 2;
-            this.Change.Text = "Change";
-            this.Change.UseVisualStyleBackColor = true;
-            this.Change.Click += new System.EventHandler(this.Change_Click);
+            this.AddButton.Location = new System.Drawing.Point(652, 13);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(136, 53);
+            this.AddButton.TabIndex = 5;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
-            // dataGridView1
+            // ChangeButton
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(634, 426);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.ChangeButton.Location = new System.Drawing.Point(652, 72);
+            this.ChangeButton.Name = "ChangeButton";
+            this.ChangeButton.Size = new System.Drawing.Size(136, 53);
+            this.ChangeButton.TabIndex = 6;
+            this.ChangeButton.Text = "Change";
+            this.ChangeButton.UseVisualStyleBackColor = true;
+            this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(652, 131);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(136, 53);
+            this.DeleteButton.TabIndex = 7;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.Location = new System.Drawing.Point(652, 326);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(136, 53);
+            this.ExitButton.TabIndex = 8;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // ViewModeBox
+            // 
+            this.ViewModeBox.FormattingEnabled = true;
+            this.ViewModeBox.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ViewModeBox.Items.AddRange(new object[] {
+            "Student",
+            "Guardian",
+            "Teacher",
+            "Class",
+            "Course"});
+            this.ViewModeBox.Location = new System.Drawing.Point(652, 299);
+            this.ViewModeBox.Name = "ViewModeBox";
+            this.ViewModeBox.Size = new System.Drawing.Size(136, 21);
+            this.ViewModeBox.TabIndex = 9;
+            this.ViewModeBox.SelectedIndexChanged += new System.EventHandler(this.ViewModeBox_SelectedIndexChanged);
+            // 
+            // ViewOptions
+            // 
+            this.ViewOptions.AutoSize = true;
+            this.ViewOptions.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewOptions.Location = new System.Drawing.Point(652, 279);
+            this.ViewOptions.Name = "ViewOptions";
+            this.ViewOptions.Size = new System.Drawing.Size(90, 17);
+            this.ViewOptions.TabIndex = 10;
+            this.ViewOptions.Text = "View Options";
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.Change);
-            this.Controls.Add(this.Delete);
-            this.Controls.Add(this.Add);
+            this.Controls.Add(this.ViewOptions);
+            this.Controls.Add(this.ViewModeBox);
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.ChangeButton);
+            this.Controls.Add(this.AddButton);
+            this.Controls.Add(this.DirectQueryButton);
+            this.Controls.Add(this.DataGrid);
             this.Name = "MainPage";
             this.Text = "MainPage";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.MainPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Add;
-        private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Button Change;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DataGrid;
+        private System.Windows.Forms.Button DirectQueryButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button ChangeButton;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.ComboBox ViewModeBox;
+        private System.Windows.Forms.Label ViewOptions;
     }
 }
 

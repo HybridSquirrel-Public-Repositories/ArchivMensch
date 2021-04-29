@@ -36,13 +36,13 @@ namespace ArchivMensch
             sQLiteConnection = new SQLiteConnection("Data Source= D:\\Projects\\ArchivMensch\\ArchivMensch\\ArchivMensch\\ArchivMensch.db");
         }
 
-        public void LoadData(DataGridView dataGrid)
+        public void LoadData(DataGridView dataGrid, string table)
         {
               
             SetConnection();
             sQLiteConnection.Open();
             sQLiteCommand = sQLiteConnection.CreateCommand();
-            sQLiteDataAdapter = new SQLiteDataAdapter("SELECT * FROM Student",sQLiteConnection);
+            sQLiteDataAdapter = new SQLiteDataAdapter("SELECT * FROM " + table,sQLiteConnection);
             dataSet.Reset();
             sQLiteDataAdapter.Fill(dataSet);
             dataTable = dataSet.Tables[0];
@@ -50,27 +50,61 @@ namespace ArchivMensch
             sQLiteConnection.Close();
         }
 
-        public void AddData()
+        public void AddData(string table, string value)
         {
+            string insert = "";
+            switch (table)
+            {
+                case "Student":
+                    insert = " (FirstName, LastName, SocialSecurityNumber, Address, PhoneNumber, EMail, Class, Course) VALUES";
+                    break;
 
+            }
+
+            SetConnection();
+            sQLiteConnection.Open();
+            sQLiteCommand = sQLiteConnection.CreateCommand();
+            sQLiteDataAdapter = new SQLiteDataAdapter("INSERT INTO " + table + insert + value, sQLiteConnection);
+            dataSet.Reset();
+            sQLiteDataAdapter.Fill(dataSet);
+            sQLiteConnection.Close();
         }
 
-        public void DeleteData()
+        public void DeleteData(string table, string value)
         {
+            SetConnection();
+            sQLiteConnection.Open();
+            sQLiteCommand = sQLiteConnection.CreateCommand();
 
+            if(table == "Class")
+            {
+                sQLiteDataAdapter = new SQLiteDataAdapter("DELETE FROM " + table + " WHERE ClassName = " + value + ";", sQLiteConnection);
+
+            }
+            else if(table == "Course")
+            {
+                sQLiteDataAdapter = new SQLiteDataAdapter("DELETE FROM " + table + " WHERE CourseID = " + "'"+ value + "'" + ";", sQLiteConnection);
+
+            }
+            else
+            {
+                sQLiteDataAdapter = new SQLiteDataAdapter("DELETE FROM " + table + " WHERE SocialSecurityNumber = " + value + ";", sQLiteConnection);
+            }
+            
+            dataSet.Reset();
+            sQLiteDataAdapter.Fill(dataSet);
+            sQLiteConnection.Close();
         }
 
-        public void EditData()
+        public void EditData(string table, string value)
         {
-
-
-
+          
         }
 
         public void FindData()
         {
 
-
+            
         }
 
         public void DirectQuery(DataGridView dataGrid, string sqlCommand)

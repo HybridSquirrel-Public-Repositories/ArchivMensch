@@ -16,7 +16,10 @@ namespace ArchivMensch
         string firstName;
         string lastName;
         string socialSecurityNumber;
-
+        string Address;
+        string Course;
+        string class_;
+        string eMail;
 
 
     }
