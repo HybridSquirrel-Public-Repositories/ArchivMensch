@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 using System.Data;
 
 using System.Windows.Forms;
@@ -25,33 +25,27 @@ namespace ArchivMensch
 
     class BackendDatabase
     {
-        private SQLiteConnection sQLiteConnection;
-        private SQLiteCommand sQLiteCommand;
-        private DataTable dataTable = new DataTable();
-        private DataSet dataSet = new DataSet();
-        private SQLiteDataAdapter sQLiteDataAdapter;
-
-        public void SetConnection()
-        {
-            sQLiteConnection = new SQLiteConnection("Data Source= D:\\Projects\\ArchivMensch\\ArchivMensch\\ArchivMensch\\ArchivMensch.db");
-        }
+        private DataTable _dataTable = new DataTable();
 
         public void LoadData(DataGridView dataGrid, string table)
         {
-              
-            SetConnection();
-            sQLiteConnection.Open();
-            sQLiteCommand = sQLiteConnection.CreateCommand();
-            sQLiteDataAdapter = new SQLiteDataAdapter("SELECT * FROM " + table,sQLiteConnection);
-            dataSet.Reset();
-            sQLiteDataAdapter.Fill(dataSet);
-            dataTable = dataSet.Tables[0];
-            dataGrid.DataSource = dataTable;
-            sQLiteConnection.Close();
+            using (var connection = new SqliteConnection("Data Source= /home/squirrel/Projects/C#/ArchivMensch/ArchivMensch/ArchivMensch/ArchivMensch.db"))
+            {
+                connection.Open();
+                var sQLiteCommand = connection.CreateCommand();
+                sQLiteCommand.CommandText = @"SELECT * FROM " + table;
+                using (var reader = sQLiteCommand.ExecuteReader())
+                {
+                    _dataTable.Load(reader);
+                    connection.Close();
+                    dataGrid.DataSource = _dataTable;
+                }
+            }
         }
 
         public void AddData(string table, string value)
         {
+            /*
             string insert = "";
             switch (table)
             {
@@ -68,10 +62,12 @@ namespace ArchivMensch
             dataSet.Reset();
             sQLiteDataAdapter.Fill(dataSet);
             sQLiteConnection.Close();
+            */
         }
 
         public void DeleteData(string table, string value)
         {
+            /*
             SetConnection();
             sQLiteConnection.Open();
             sQLiteCommand = sQLiteConnection.CreateCommand();
@@ -94,6 +90,7 @@ namespace ArchivMensch
             dataSet.Reset();
             sQLiteDataAdapter.Fill(dataSet);
             sQLiteConnection.Close();
+            */
         }
 
         public void EditData(string table, string value)
@@ -109,6 +106,7 @@ namespace ArchivMensch
 
         public void DirectQuery(DataGridView dataGrid, string sqlCommand)
         {
+            /*
             SetConnection();
             sQLiteConnection.Open();
             sQLiteCommand = sQLiteConnection.CreateCommand();
@@ -118,6 +116,7 @@ namespace ArchivMensch
             dataTable = dataSet.Tables[0];
             dataGrid.DataSource = dataTable;
             sQLiteConnection.Close();
+            */
         }
     }
 

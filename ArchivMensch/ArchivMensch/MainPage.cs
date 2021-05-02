@@ -11,6 +11,7 @@ namespace ArchivMensch
         public MainPage()
         {
             InitializeComponent();
+
             
         }
 
@@ -18,7 +19,6 @@ namespace ArchivMensch
         {
 
             ViewModeBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            ViewModeBox.Text = "Student";
             backendDatabase.LoadData(DataGrid, ViewModeBox.Text);
 
         }
@@ -44,6 +44,7 @@ namespace ArchivMensch
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+           /*
             string value = "";
             if (ViewModeBox.Text == "Class")
             {
@@ -62,6 +63,7 @@ namespace ArchivMensch
             
             backendDatabase.DeleteData(ViewModeBox.Text, value);
             backendDatabase.LoadData(DataGrid, ViewModeBox.Text);
+            */
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
