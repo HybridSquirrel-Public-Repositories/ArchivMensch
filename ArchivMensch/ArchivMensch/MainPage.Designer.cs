@@ -37,17 +37,21 @@ namespace ArchivMensch
             this.ExitButton = new System.Windows.Forms.Button();
             this.ViewModeBox = new System.Windows.Forms.ComboBox();
             this.ViewOptions = new System.Windows.Forms.Label();
+            this.FindButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGrid
             // 
+            this.DataGrid.AllowUserToAddRows = false;
+            this.DataGrid.AllowUserToDeleteRows = false;
             this.DataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGrid.Location = new System.Drawing.Point(13, 13);
             this.DataGrid.Name = "DataGrid";
+            this.DataGrid.ReadOnly = true;
             this.DataGrid.Size = new System.Drawing.Size(633, 425);
             this.DataGrid.TabIndex = 3;
-            this.DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellContentClick);
+            this.DataGrid.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DataGrid_RowValidating);
             // 
             // DirectQueryButton
             // 
@@ -71,6 +75,7 @@ namespace ArchivMensch
             // 
             // ChangeButton
             // 
+            this.ChangeButton.Enabled = false;
             this.ChangeButton.Location = new System.Drawing.Point(652, 72);
             this.ChangeButton.Name = "ChangeButton";
             this.ChangeButton.Size = new System.Drawing.Size(136, 53);
@@ -125,11 +130,22 @@ namespace ArchivMensch
             this.ViewOptions.TabIndex = 10;
             this.ViewOptions.Text = "View Options";
             // 
+            // FindButton
+            // 
+            this.FindButton.Location = new System.Drawing.Point(652, 190);
+            this.FindButton.Name = "FindButton";
+            this.FindButton.Size = new System.Drawing.Size(136, 53);
+            this.FindButton.TabIndex = 11;
+            this.FindButton.Text = "Find";
+            this.FindButton.UseVisualStyleBackColor = true;
+            this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.FindButton);
             this.Controls.Add(this.ViewOptions);
             this.Controls.Add(this.ViewModeBox);
             this.Controls.Add(this.ExitButton);
@@ -156,6 +172,7 @@ namespace ArchivMensch
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.ComboBox ViewModeBox;
         private System.Windows.Forms.Label ViewOptions;
+        private System.Windows.Forms.Button FindButton;
     }
 }
 

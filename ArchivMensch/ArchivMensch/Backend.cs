@@ -13,16 +13,6 @@ using System.Windows.Forms;
 namespace ArchivMensch
 {
 
-    //https://www.youtube.com/watch?v=dYlo6M3m75Y
-    //https://www.youtube.com/watch?v=ayp3tHEkRc0
-    //https://www.youtube.com/watch?v=anTP-mgktiI
-    //https://www.youtube.com/watch?v=U777GVhKUQk
-
-
-
-
-
-
     class BackendDatabase
     {
         private SQLiteConnection sQLiteConnection;
@@ -52,19 +42,10 @@ namespace ArchivMensch
 
         public void AddData(string table, string value)
         {
-            string insert = "";
-            switch (table)
-            {
-                case "Student":
-                    insert = " (FirstName, LastName, SocialSecurityNumber, Address, PhoneNumber, EMail, Class, Course) VALUES";
-                    break;
-
-            }
-
-            SetConnection();
+             SetConnection();
             sQLiteConnection.Open();
             sQLiteCommand = sQLiteConnection.CreateCommand();
-            sQLiteDataAdapter = new SQLiteDataAdapter("INSERT INTO " + table + insert + value, sQLiteConnection);
+            sQLiteDataAdapter = new SQLiteDataAdapter("INSERT INTO " + table + " VALUES" + value, sQLiteConnection);
             dataSet.Reset();
             sQLiteDataAdapter.Fill(dataSet);
             sQLiteConnection.Close();
@@ -101,10 +82,19 @@ namespace ArchivMensch
           
         }
 
-        public void FindData()
+        public void FindData(DataGridView dataGrid, string one, string two)
         {
-
             
+            SetConnection();
+            sQLiteConnection.Open();
+            sQLiteCommand = sQLiteConnection.CreateCommand();
+            sQLiteDataAdapter = new SQLiteDataAdapter("SELECT * FROM " + one + " INNER JOIN Guardian_Line ON "
+                + one + ".LastName = Guardian_Line.StudentLastName INNER JOIN " + two + " ON Guardian_Line.GuardianLastName = " + two +".LastName", sQLiteConnection);
+            dataSet.Reset();
+            sQLiteDataAdapter.Fill(dataSet);
+            dataTable = dataSet.Tables[0];
+            dataGrid.DataSource = dataTable;
+            sQLiteConnection.Close();
         }
 
         public void DirectQuery(DataGridView dataGrid, string sqlCommand)
@@ -124,7 +114,26 @@ namespace ArchivMensch
     class BackendUI
     {
 
+       
 
+        public Label CreateLabel(string label, int x, int y)
+        {
+            Label newLabel = new Label();
+
+            newLabel.Location = new System.Drawing.Point(x, y);
+            newLabel.Text = label;
+            newLabel.Name = label + "Label";
+            return newLabel;
+
+        }
+        public TextBox CreateTextBox(string label, int x, int y)
+        {
+            TextBox newTextBox = new TextBox();
+
+            newTextBox.Location = new System.Drawing.Point(x, y + 2);
+            newTextBox.Name = label + "Box";
+            return newTextBox;
+        }
 
     }
 

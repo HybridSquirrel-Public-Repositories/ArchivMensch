@@ -11,8 +11,9 @@ namespace ArchivMensch
         public MainPage()
         {
             InitializeComponent();
-            
         }
+
+        
 
         private void MainPage_Load(object sender, EventArgs e)
         {
@@ -20,12 +21,17 @@ namespace ArchivMensch
             ViewModeBox.DropDownStyle = ComboBoxStyle.DropDownList;
             ViewModeBox.Text = "Student";
             backendDatabase.LoadData(DataGrid, ViewModeBox.Text);
+           
 
         }
 
+
+
         private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if(DataGrid.CurrentCell.Value != null) { DeleteButton.Enabled = true; }
+            else { DeleteButton.Enabled = false; }
+          
         }
 
 
@@ -34,7 +40,8 @@ namespace ArchivMensch
 
             AddPage addPage = new AddPage();
             addPage.Show();
-            addPage.SetSettings(ViewModeBox.Text, DataGrid);
+            addPage.SetSettings(ViewModeBox.Text, DataGrid.Columns.Count, DataGrid);
+            
         }
 
         private void ChangeButton_Click(object sender, EventArgs e)
@@ -44,7 +51,9 @@ namespace ArchivMensch
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+
             string value = "";
+
             if (ViewModeBox.Text == "Class")
             {
                 value = DataGrid.CurrentRow.Cells["ClassName"].Value.ToString();
@@ -59,7 +68,7 @@ namespace ArchivMensch
             {
                 value = DataGrid.CurrentRow.Cells["SocialSecurityNumber"].Value.ToString();
             }
-            
+
             backendDatabase.DeleteData(ViewModeBox.Text, value);
             backendDatabase.LoadData(DataGrid, ViewModeBox.Text);
         }
@@ -78,6 +87,17 @@ namespace ArchivMensch
         private void ViewModeBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             backendDatabase.LoadData(DataGrid, ViewModeBox.Text);
+        }
+
+        private void FindButton_Click(object sender, EventArgs e)
+        {
+            FindPage findPage = new FindPage();
+            findPage.Show();
+        }
+
+        private void DataGrid_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if(DataGrid[0, e.RowIndex].Value == null) { e.Cancel = true; }
         }
     }
 
