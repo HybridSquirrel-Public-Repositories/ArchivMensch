@@ -26,7 +26,7 @@ namespace ArchivMensch
         }
 
 
-
+        //cursed method
         private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(DataGrid.CurrentCell.Value != null) { DeleteButton.Enabled = true; }
@@ -34,7 +34,7 @@ namespace ArchivMensch
           
         }
 
-
+        
         private void AddButton_Click(object sender, EventArgs e)
         {
 
@@ -46,7 +46,16 @@ namespace ArchivMensch
 
         private void ChangeButton_Click(object sender, EventArgs e)
         {
+            string value = "";
+            ChangePage changePage = new ChangePage();
+            changePage.Show();
 
+            for (int i = 0; i < DataGrid.ColumnCount; i++)
+            {
+                value += DataGrid.CurrentRow.Cells[i].Value.ToString() + ",";
+            }
+
+            changePage.SetSettings(ViewModeBox.Text, DataGrid.Columns.Count, DataGrid, value);
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -94,7 +103,8 @@ namespace ArchivMensch
             FindPage findPage = new FindPage();
             findPage.Show();
         }
-
+        
+        //cursed method
         private void DataGrid_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
         {
             if(DataGrid[0, e.RowIndex].Value == null) { e.Cancel = true; }

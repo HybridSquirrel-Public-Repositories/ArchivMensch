@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Data;
-
 using System.Windows.Forms;
 
 
@@ -42,7 +41,7 @@ namespace ArchivMensch
 
         public void AddData(string table, string value)
         {
-             SetConnection();
+            SetConnection();
             sQLiteConnection.Open();
             sQLiteCommand = sQLiteConnection.CreateCommand();
             sQLiteDataAdapter = new SQLiteDataAdapter("INSERT INTO " + table + " VALUES" + value, sQLiteConnection);
@@ -77,9 +76,15 @@ namespace ArchivMensch
             sQLiteConnection.Close();
         }
 
-        public void EditData(string table, string value)
+        public void EditData(string table, string value, string id)
         {
-          
+            SetConnection();
+            sQLiteConnection.Open();
+            sQLiteCommand = sQLiteConnection.CreateCommand();
+            sQLiteDataAdapter = new SQLiteDataAdapter("UPDATE " + table + " SET " + value + "WHERE SocialSecurityNumber = " + id, sQLiteConnection);
+            dataSet.Reset();
+            sQLiteDataAdapter.Fill(dataSet);
+            sQLiteConnection.Close();
         }
 
         public void FindData(DataGridView dataGrid, string one, string two)
@@ -109,6 +114,9 @@ namespace ArchivMensch
             dataGrid.DataSource = dataTable;
             sQLiteConnection.Close();
         }
+
+     
+
     }
 
     class BackendUI

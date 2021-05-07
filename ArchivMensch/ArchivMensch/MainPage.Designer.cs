@@ -75,7 +75,6 @@ namespace ArchivMensch
             // 
             // ChangeButton
             // 
-            this.ChangeButton.Enabled = false;
             this.ChangeButton.Location = new System.Drawing.Point(652, 72);
             this.ChangeButton.Name = "ChangeButton";
             this.ChangeButton.Size = new System.Drawing.Size(136, 53);
