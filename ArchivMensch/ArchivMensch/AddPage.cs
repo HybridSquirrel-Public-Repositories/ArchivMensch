@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ArchivMensch
@@ -15,6 +8,7 @@ namespace ArchivMensch
         string table;
         DataGridView dataGrid;
         BackendDatabase backendDatabase = new BackendDatabase();
+        BackendUI backendUI = new BackendUI();
        
         
         public AddPage()
@@ -22,95 +16,102 @@ namespace ArchivMensch
             InitializeComponent();
         }
 
-        public void SetSettings(string SetTable, DataGridView dataGrid)
+        public void SetSettings(string setTable, int rows, DataGridView dataGrid)
         {
-            table = SetTable;
             this.dataGrid = dataGrid;
+            table = setTable;
+            TableLabel.Text = table;
+
+            int y = -34;
+         
+               
+            for(int i = 0; i < rows; i++)
+            {
+
+                Controls.Add(backendUI.CreateLabel(dataGrid.Columns[i].Name, 13, y += 47));
+                Controls.Add(backendUI.CreateTextBox(dataGrid.Columns[i].Name, 13, y += 22));
+            }
         }
 
-        #region TextBox
-        private void FirstNameBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-      
-        private void LastNameBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void SocialSecurityNumberBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddressBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void EmailBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void PhoneNumberBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClassBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void CourseBox_TextChanged(object sender, EventArgs e)
-        {
-        }
-        
-        #endregion
+  
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
-            func = (controls) =>
+            string input = "(";
+            int x = 0;
+
+            Action<Control.ControlCollection> nullfields = null;
+            nullfields = (controls) =>
             {
                 foreach (Control control in controls)
                 {
                     if (control is TextBox)
                     { if ((control as TextBox).Text == "" || (control as TextBox).Text == " ") { (control as TextBox).Text = "NULL"; } }
                     else
-                    { func(control.Controls); }
+                    { nullfields(control.Controls); }
                 }
 
             };
-            func(Controls);
+            nullfields(Controls);
 
-            if(PhoneNumberBox.Text == "" || PhoneNumberBox.Text == " ") { PhoneNumberBox.Text = "0"; }
 
-            string insert = "('" + FirstNameBox.Text + "', '" + LastNameBox.Text + "', " + SocialSecurityNumberBox.Text + ", '" + AddressBox.Text + "', " + PhoneNumberBox.Text + ", '" + EmailBox.Text + "', '" + ClassBox.Text + "', '" + CourseBox.Text + "');";
-            backendDatabase.AddData(table, insert);
+            Action<Control.ControlCollection> formater = null;
+            formater = (controls) =>
+            {
+                foreach (Control control in controls)
+                { 
+                    if (control is TextBox)
+                    { 
+                        if ((control as TextBox).Text != "" || (control as TextBox).Text != " ") 
+                        {
+                            string intchecker = (control as TextBox).Text;
+                            if (Int32.TryParse(intchecker, out x)) { input += (control as TextBox).Text + ", "; }
+                            else { input += "'" +(control as TextBox).Text + "'" + ", "; }
+                        } 
+                    }
+                    else { formater(control.Controls); }
+                }
+            };
+
+            formater(Controls);
+
+            input = input.Remove(input.Length - 2);
+            input += ")";
+
+            backendDatabase.AddData(table, input);
             backendDatabase.LoadData(dataGrid, table);
             Close();
+        
         }
+
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
 
-            Action<Control.ControlCollection> func = null;
-            func = (controls) =>
+            Action<Control.ControlCollection> clear = null;
+            clear = (controls) =>
             {
                 foreach (Control control in controls)
                 {
                     if (control is TextBox) 
                     { (control as TextBox).Clear(); }
                     else
-                    { func(control.Controls); }
+                    { clear(control.Controls); }
                 }
                     
             };
-            func(Controls);
+            clear(Controls);
 
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void AddPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

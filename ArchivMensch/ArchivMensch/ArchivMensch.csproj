@@ -63,11 +63,23 @@
     </Compile>
     <Compile Include="Backend.cs" />
     <Compile Include="Blueprints.cs" />
+    <Compile Include="ChangePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePage.Designer.cs">
+      <DependentUpon>ChangePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="DirectQuery.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DirectQuery.Designer.cs">
       <DependentUpon>DirectQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindPage.Designer.cs">
+      <DependentUpon>FindPage.cs</DependentUpon>
     </Compile>
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
@@ -80,8 +92,14 @@
     <EmbeddedResource Include="AddPage.resx">
       <DependentUpon>AddPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangePage.resx">
+      <DependentUpon>ChangePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DirectQuery.resx">
       <DependentUpon>DirectQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindPage.resx">
+      <DependentUpon>FindPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
